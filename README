@@ -1,0 +1,10 @@
+MSIM 1.5.0 -- Machine Simulator
+===============================
+
+To compile and install:
+./configure && make install
+
+This codebase has been derived from the MSIM 1.4.0 [1] (which originally
+stood for MIPS Simulator). It currently simulates the MIPS R4000 CPU.
+
+[1] http://d3s.mff.cuni.cz/~holub/sw/msim/

@@ -1,0 +1,31 @@
+#
+# Copyright (c) 2008 Martin Decky
+# All rights reserved.
+#
+# Distributed under the terms of GPL.
+#
+
+INSTALL = @INSTALL@
+RM = @RM@
+PREFIX = @prefix@
+
+BINARY = bin/msim
+
+.PHONY: all install uninstall clean distclean
+
+all:
+	$(MAKE) -C src
+
+install: all
+	$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin
+	$(INSTALL) -s -m 755 $(BINARY) $(DESTDIR)$(PREFIX)/$(BINARY)
+
+uninstall:
+	$(RM) -f $(DESTDIR)$(PREFIX)/$(BINARY)
+
+clean:
+	$(MAKE) -C src clean
+
+distclean: clean
+	$(MAKE) -C src distclean
+	$(RM) -f Makefile config.log config.status config.h stamp-h
