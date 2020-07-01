@@ -1,7 +1,8 @@
 2018-01-12 Martin Decky <martin@decky.cz>
 	Version 1.5.0
-	* new development branch derived from the
-	  latest MSIM 1.5.0
+	* new development branch forked from the
+	  latest MSIM 1.4.0
+	  (https://github.com/D-iii-S/msim)
 	* the acronym now means Machine Simulator
 	  in anticipation of future changes
 

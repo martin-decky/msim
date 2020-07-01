@@ -23,6 +23,8 @@
 #define FRAME_SIZE    (1 << FRAME_WIDTH)
 #define FRAME_MASK    (FRAME_SIZE - 1)
 
+#define R4K_MAX_CP0_REGISTERS 32
+
 #define R4K_REG_COUNT     32
 #define R4K_REG_VARIANTS  3
 

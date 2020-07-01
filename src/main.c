@@ -267,7 +267,7 @@ static void machine_run(void)
 		 * or gdb flags will be set if a breakpoint
 		 * is hit.
 		 */
-		// FIXME breakpoint_check_for_code_breakpoints();
+		breakpoint_check_for_code_breakpoints();
 		
 		/*
 		 * If the remote GDB debugging is allowed and the
@@ -326,10 +326,17 @@ int main(int argc, char *args[])
 	/*
 	 * Run-time configuration
 	 */
-	if (!parse_cmdline(argc, args))
+	if (!parse_cmdline(argc, args)) {
+		input_back();
 		return 0;
+	}
 	
 	script();
+	
+	if (machine_interactive) {
+		alert("MSIM %s", VERSION);
+		alert("Entering interactive mode, type `help' for help.");
+	}
 	
 	/*
 	 * Main simulation loop
